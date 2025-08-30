@@ -12,12 +12,26 @@
   <meta property="og:description" content="Platform demo pencarian berita real-time, lengkap dengan kategori dan bahasa. Didukung API stabil, tampilan modern, dan fitur smooth UX.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://github.com/HASYIM56/Search-News-Demo/">
-  <meta property="og:image" content="https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/demo-preview.png">
+  <meta property="og:site_name" content="Search News Demo HASYIM56">
+  <meta property="og:image" content="https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/H56.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="600">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Demo Search News • HASYIM56">
   <meta name="twitter:description" content="Platform demo pencarian berita real-time, lengkap dengan kategori dan bahasa. Didukung API stabil, tampilan modern, dan fitur smooth UX.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/demo-preview.png">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/H56.png">
+  <meta name="twitter:site" content="@HASYIM56">
+  <meta name="twitter:creator" content="@HASYIM56">
   <link rel="canonical" href="https://github.com/HASYIM56/Search-News-Demo/">
+  <!-- Favicon & Apple Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/H56.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/H56.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/H56.png">
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/H56.png">
+  <meta name="msapplication-TileColor" content="#7aa2ff">
+  <meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/H56.png">
+  <meta name="theme-color" content="#0b0d10">
 
   <!-- Google Fonts: Inter for UI, Merriweather for news title -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -323,7 +337,10 @@
     </section>
     <section id="stats" class="badge" style="margin-top:10px; display:none"></section>
     <section id="results" class="results" aria-live="polite" aria-busy="false"></section>
-    <div class="footer">Powered by <span class="count">h56-search-news-api</span> • Demo sederhana (dark, smooth)</div>
+    <div class="footer">
+      <img src="https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/H56.png" alt="HASYIM56" style="height:18px;vertical-align:middle;margin-right:6px;border-radius:4px;">
+      Powered by <span class="count">h56-search-news-api</span> • Demo sederhana (dark, smooth)
+    </div>
   </div>
   <script>
     const API_BASE = 'https://h56-search-news-api.netlify.app/api/news';
@@ -362,7 +379,7 @@
 
     function getImageFromArticle(a){
       // Tolerate different fields the API may use
-      return a.image_url || a.image || a.thumbnail || (a.enclosure && a.enclosure.url) || '';
+      return a.image_url || a.image || a.thumbnail || (a.enclosure && a.enclosure.url) || 'https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/H56.png';
     }
 
     function renderSkeleton(n=6){
@@ -393,7 +410,7 @@
         const card = document.createElement('article');
         card.className = 'card';
         card.innerHTML = `
-          <div class="thumb">${img ? `<img alt="" loading="lazy" src="${img}">` : ''}</div>
+          <div class="thumb">${img ? `<img alt="" loading="lazy" src="${img}">` : `<img alt="" loading="lazy" src="https://raw.githubusercontent.com/HASYIM56/Search-News-Demo/main/H56.png">`}</div>
           <div class="content">
             <a class="titleLink" target="_blank" rel="noopener noreferrer" href="${a.link || a.url}"><strong>${a.title || 'Tanpa judul'}</strong></a>
             <div class="meta">
